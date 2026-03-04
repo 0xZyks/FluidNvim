@@ -67,4 +67,28 @@ return {
     event = "BufReadPost",
     config = true,
   },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    lazy = false,
+    keys = {
+      { "<leader>e", "<cmd>Neotree toggle<CR>", desc = "Toggle Neotree" },
+    },
+    config = function()
+      require("neo-tree").setup({
+        window = { width = 30 },
+        filesystem = {
+          follow_current_file = { enabled = true },  -- suit le fichier ouvert
+          use_libuv_file_watcher = true,
+          filtered_items = { hide_dotfiles = false },
+        },
+      })
+    end,
+  },
 }

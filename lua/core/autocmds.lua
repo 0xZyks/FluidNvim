@@ -23,3 +23,11 @@ autocmd("FileType", {
     vim.opt_local.shiftwidth = 2
   end,
 })
+
+-- Ouvre Neotree au lancement
+autocmd("VimEnter", {
+  group = augroup("NeoTreeOpen", { clear = true }),
+  callback = function()
+    require("neo-tree.command").execute({ action = "show" })
+  end,
+})
