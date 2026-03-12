@@ -17,4 +17,21 @@ return {
     event = "BufReadPost",
     config = true,
   },
+
+  -- ReadMe
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    ft = "markdown",
+    opts = {},
+  },
+
+  {
+    "42Paris/42header",
+    lazy = false,
+    config = function()
+      vim.g.user42 = "tsignori"
+      vim.g.mail42 = "tsignori@student.42perpignan.fr"
+    end,
+  },
 }
