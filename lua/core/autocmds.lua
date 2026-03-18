@@ -24,10 +24,10 @@ autocmd("FileType", {
   end,
 })
 
--- Ouvre Neotree au lancement
+--[[ -- Ouvre Neotree au lancement
 autocmd("VimEnter", {
   group = augroup("NeoTreeOpen", { clear = true }),
   callback = function()
     require("neo-tree.command").execute({ action = "show" })
   end,
-})
+}) ]]
